@@ -1,0 +1,73 @@
+body{
+    background: whitesmoke;
+    overflow: auto;
+}
+.navbar{
+   background: rgb(255, 250, 177);
+   display: flex;
+   align-items: center;
+   border-radius: 1vw;
+   
+  
+   
+}
+.home{
+    font-size:1.35vw;
+    padding-left: 3vw;
+    padding-top: 1vh;
+    padding-right: 2vw;
+    align-items: center;
+    padding-bottom: 1vh;
+
+}
+.home:hover{
+    color: red;
+}
+.about{
+    font-size:1.35vw;
+    padding-left: 3vw;
+    padding-top: 1vh;
+    padding-right: 2vw;
+    align-items: center;
+    padding-bottom: 1vh;
+}
+.about:hover{
+    color: red;
+}
+.blogs{
+    font-size:1.35vw;
+    padding-left: 3vw;
+    padding-top: 1vh;
+    padding-right: 2vw;
+    align-items: center;
+    padding-bottom: 1vh;
+}
+.blogs:hover{
+    color: red;
+}
+.error{
+    padding-top: 2vh;
+    margin-left: 3vw;
+    font-size: x-large;
+    text-align: center;
+}
+.nav{
+    text-decoration: none;
+    color: inherit;
+}
+.about-us{
+    text-align: center;
+    margin-top: 10vh;
+    font-size: large;
+}
+.footer{
+   
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+}
+.copyright{
+     
+    margin-left:45vw;
+    text-align: center;
+}
