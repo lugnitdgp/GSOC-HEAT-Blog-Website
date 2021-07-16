@@ -71,3 +71,77 @@ body{
     margin-left:45vw;
     text-align: center;
 }
+.welcome{
+    text-align: center;
+    font-size: larger;
+}
+.wel{
+    margin-top: 10vh;
+}
+.create{
+    justify-content: center;
+    margin-left: 44.5vw;
+    margin-top: 8vh;
+    width: 10vw;
+    height: 5vh;
+    border-radius: 1.2vh;
+    border: none;
+   background-color: rgb(238, 238, 238);
+   font-size:15px
+}
+.create:hover{
+    background-color: gainsboro;
+    transform: scale(1.02);
+    transition-duration: 0.5s;
+}
+.form{
+    margin-top: 7vh;
+    flex: none;
+    text-align: center;
+}
+.submit{
+    margin-top: 3vh;
+}
+.input{
+    height: 11vh;
+    width: 35vw;
+    overflow:scroll;
+    margin-top: 2vh;
+}
+.input-div{
+    text-align: center;
+    padding-bottom: 2vh;
+    font-size: large;
+}
+.blog-contents{
+    margin-left: 3vw;
+    margin-top: 3vh;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5vw;
+}
+.detail{
+    display: flex;
+    justify-content: space-evenly;
+}
+.main{
+    margin-top: 3vh;
+    width: 30vw;
+}
+.del{
+    margin-top: 3vh;
+    border-radius: 2vh;
+}
+.delete{
+    border-radius: 2vh;
+    padding: 0.5vw;
+    background-color: white;
+}
+.delete:hover{
+    cursor: pointer;
+    box-shadow: 1px 2px gray;
+    transform: scale(2);
+    transition-duration: 0.5;
+    color: red;
+    
+}

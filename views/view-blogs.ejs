@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title%></title>
+        <link rel="stylesheet" href="/Styles.css">
+    </head>
+    <body>
+        <%- include('../public/partials/navbar') %>
+       <div >
+        <%if(data.length>0){ %> 
+            <%data.forEach(data=>{%>
+                <div class="blog-contents"><li><a class ="nav" href='/blogs/<%= data._id%>'><%= data.title %></a></li></div>
+            <%})%> 
+        <%}else{%>
+            <p class="blog-contents">No Blogs to Display !</p>
+       <% }%>
+       </div>
+        <%- include('../public/partials/footer') %>
+    </body>
+</html>

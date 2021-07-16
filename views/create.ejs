@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title%></title>
+        <link rel="stylesheet" href="/Styles.css">
+    </head>
+    <body>
+        <%- include('../public/partials/navbar') %>
+          <form class = "form" action="/blogs" method = "POST">
+            <label class="input-div">Blog title</label>
+              <div >
+                <textarea class = "input"type="text" id = "title" name="title" required></textarea>
+              </div>
+              <label class="input-div">Blog Description</label>
+              <div >
+                <textarea class = "input"type="text" id = "main" name="main" required></textarea>
+              </div>
+              <button class = "submit">Submit</button>
+         </form>
+        <%- include('../public/partials/footer') %>
+    </body>
+</html>
