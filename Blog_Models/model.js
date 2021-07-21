@@ -14,6 +14,6 @@ const blogSchema = new Schema({
     {timestamps:true
     }
 );
-
-const Blog=mongoose.model('users',blogSchema);
+ 
+const Blog=mongoose.model('blogs',blogSchema);
 module.exports=Blog;
