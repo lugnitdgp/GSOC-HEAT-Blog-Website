@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <title><%= title%></title>
         <link rel="stylesheet" href="/Styles.css">
     </head>
     <body>
         <%- include('../public/partials/navbar') %>
         <div class="signup">
-            <form>
+            <form autocomplete="off">
                 <h2>Sign Up</h2>
                 <div><label for = "email">Email</label></div>
-                <input type="text" name="email" class = "sign" >
+                <input type="text" name="email" class = "sign" autocomplete="off" >
                 <div class="emailerror"></div>
                 <div><label for = "password">Password</label></div>
-                <input type="text" name="password" class = "sign" >
+                <input type="password" name="password" class = "sign"autocomplete="off" >
                 <div class="passworderror"></div>
                 <button class = "submit2">Submit</button>
             </form>

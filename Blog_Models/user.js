@@ -14,9 +14,20 @@ const userSchema = new Schema({
     password:{
         type:String,
         required:[true,'*Password is required'],
-        lowercase:true,
         minlength:[6,'*Minimum 6 characters required']
-    }
+    },
+    blog:[
+        { 
+            title:{
+                type:String,
+                
+            },
+            main:{
+                type:String,
+                
+            },
+        }
+    ]
 });
 
 userSchema.pre('save',async function(next){
@@ -36,6 +47,7 @@ userSchema.statics.login = async function(email,password){
     
     throw Error('*Email not registered');
 }
+ 
 
 
  

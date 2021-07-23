@@ -1,20 +1,22 @@
 const express=require('express');
 const routes=express.Router();
-const Blog = require('./Blog_Models/model.js');
 const Controllers=require('./Controllers/controllers');
+const requireAuth = require('./Middlewares/middleware');
+const checkUser = require('./Middlewares/middleware');
 
-
-routes.post('/blogs',Controllers.postblog);
-routes.get('/blogs', Controllers.getblog);
-routes.get('/', Controllers.home);
-routes.get('/signup', Controllers.signup_get);
+// routes.get('*',checkUser.checkUser);
+routes.post('/blogs',requireAuth.requireAuth,Controllers.postblog);
+routes.get('/blogs',requireAuth.requireAuth, checkUser.checkUser,Controllers.getblog);
+routes.get('/',requireAuth.requireAuth, checkUser.checkUser,Controllers.home);
+routes.get('/signup',checkUser.checkUser, Controllers.signup_get);
 routes.post('/signup', Controllers.signup_post);
-routes.get('/login', Controllers.login_get);
+routes.get('/login',checkUser.checkUser, Controllers.login_get);
 routes.post('/login', Controllers.login_post);
-routes.get('/about', Controllers.about);
-routes.get('/create', Controllers.createblog);
-routes.get('/blogs/:id', Controllers.getid);
-routes.delete('/blogs/:id',Controllers.deleteid );
-routes.use(Controllers.Err);
+routes.get('/logout',Controllers.logout_get);
+routes.get('/about',requireAuth.requireAuth,checkUser.checkUser, Controllers.about);
+routes.get('/create',requireAuth.requireAuth, checkUser.checkUser,Controllers.createblog);
+routes.get('/blogs/:id',requireAuth.requireAuth,checkUser.checkUser, Controllers.getid);
+routes.delete('/blogs/:id',requireAuth.requireAuth,Controllers.deleteid );
+routes.use(checkUser.checkUser,Controllers.Err);
 
 module.exports=routes;

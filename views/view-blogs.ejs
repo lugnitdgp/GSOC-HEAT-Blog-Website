@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <title><%= title%></title>
         <link rel="stylesheet" href="/Styles.css">
     </head>
@@ -9,10 +12,10 @@
        <div >
         <%if(data.length>0){ %> 
             <%data.forEach(data=>{%>
-                <div class="blog-contents"><li><a class ="nav" href='/blogs/<%= data._id%>'><%= data.title %></a></li></div>
+                <div class="blog-contents"><ul><li><a class ="nav" href='/blogs/<%= data._id%>'><%= data.title %></a></li></ul></div>
             <%})%> 
         <%}else{%>
-            <p class="blog-contents">No Blogs to Display !</p>
+            <p class="empty-contents">No Blogs to Display !</p>
        <% }%>
        </div>
         <%- include('../public/partials/footer') %>
