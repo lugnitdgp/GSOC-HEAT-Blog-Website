@@ -1,7 +1,6 @@
 # Blog Website
 
-![HTML](https://user-images.githubusercontent.com/77445478/160245689-28c5d97a-ba04-45d7-9075-9747f4f16ede.svg) ![CSS](https://user-images.githubusercontent.com/77445478/160245751-77fbeb30-b66d-4cfb-b298-d2943bda5121.svg) ![Node.js](https://user-images.githubusercontent.com/77445478/160245726-365ee7ba-5e86-490c-b028-e554b32ce855.svg) 
-
+<img src="https://img.shields.io/badge/HTML-88888?style=for-the-badge&logo=html5&logoColor=white"></img> <img src="https://img.shields.io/badge/CSS-509383?&style=for-the-badge&logo=css3&logoColor=white"></img> <img src="https://img.shields.io/badge/NODE.JS-236120?style=for-the-badge&logo=node.js&logoColor=white"></img>
 
 ## Description
 
