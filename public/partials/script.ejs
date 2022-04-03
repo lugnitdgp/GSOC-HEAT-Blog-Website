@@ -1,0 +1,25 @@
+<script>
+    if(document.cookie=="")
+        document.cookie="light";
+    function toggle(){
+        if(document.cookie=="light")
+            document.cookie="dakr";
+        else
+            document.cookie="light";
+        document. location. reload()
+    }
+    console.log(document.cookie);
+    tr=document.querySelector(':root');
+    if(document.cookie=="light"){
+        tr.style.setProperty('--back','rgb(221, 254, 255)');
+        tr.style.setProperty('--secondback','rgb(188, 253, 250)');
+        tr.style.setProperty('--titles','rgb(50, 197, 207)');
+        tr.style.setProperty('--tc','black');
+        tr.style.setProperty('--content','rgb(131, 224, 224)');
+        tr.style.setProperty('--button','#121212');
+        tr.style.setProperty('--input','rgb(188, 253, 250)');
+        document.getElementById('dark').style='display:none;';
+    }
+    else
+        document.getElementById('light').style='display:none;';
+</script>

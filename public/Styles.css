@@ -1,49 +1,88 @@
+:root{
+    --back:#121212;
+    --secondback:#161618;
+    --titles:rgb(50, 197, 207);
+    --tc:#c2c2c2;
+    --content:rgb(131, 224, 224);
+    --input:#2f3742;
+    --button:white;
+    /* rgb(188, 253, 250)
+    rgb(50, 197, 207) 
+    #364f64*/
+}
 body{
-    background: rgb(221, 254, 255);
+    background: var(--back);
     overflow: auto;
 }
 .navbar{
-   background: rgb(188, 253, 250);
+   background: var(--secondback);
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width:100vh;
    display: flex;
-   align-items: center;
-   border-radius: 1vw;
+   align-items: stretch;
+   width: 100%;
+   height: fit-content;
 }
-.navbar:hover{
-    box-shadow:  2px 1px 2px rgb(197, 197, 197);
+.nav1{
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
 }
 .nav2{
+    width: 50%;
     display: flex;
-    justify-content: end;
-    align-items: flex-end;
-    margin-left: 25vw;
+    justify-content: flex-end;
+}
+.icon{
+    font-size: 100%;
 }
 .top{
-    font-size:1.35vw;
+    font-size:1rem;
     padding-left: 3vw;
     padding-top: 1vh;
     padding-right: 2vw;
     align-items: center;
     padding-bottom: 1vh;
-    color:rgb(114, 113, 113) ;
+    color:var(--tc) ;
+
 
 }
 .top:hover{
-    color: rgb(0, 47, 255);
+    background-color: white;
+    transition-duration: 0.5s;
 }
 .top1{
-    font-size:1.35vw;
+    font-size:1rem;
     padding-left: 3vw;
     padding-top: 1vh;
     padding-right: 2vw;
     align-items: center;
     padding-bottom: 1vh;
-    color:rgb(114, 113, 113) ;
+    color:var(--tc) ;
     white-space: nowrap;
 }
-.top1:hover{
-    color: rgb(0, 47, 255);
+#ham-item{
+    top: 32px;
+    display: none;
+    z-index: 1000;
 }
- 
+.hamburger{
+    position: fixed;
+    right: 10px;
+    top: 4px;
+    display: none;
+    color: var(--tc);
+}
+@media screen and (max-width: 760px){
+    .nav2{
+        display: none;
+    }
+    .hamburger{
+        display: inline-block;
+    }
+}
 .error{
     padding-top: 2vh;
     margin-left: 3vw;
@@ -61,90 +100,162 @@ body{
     font-size: large;
 }
 .ab{
-    font-family: 'Montserrat', sans-serif;
+    color: var(--tc);
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
 }
-.footer{
-   
-    position: absolute;
-    bottom: 0;
+.mode{
+    display: flex;
     align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom:60px;
+    border-radius: 50%;
+    font-size: 3vmin;
+    background-color: var(--button);
+    height: 6vmin;
+    width: 6vmin;
+    cursor: pointer;
+    color: var(--input);
+}
+.footer{
+    padding :10px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    background-color: var(--secondback);
+    color: var(--tc);
+    text-align: center;
 }
 .copyright{
      
     margin-left:45vw;
-    text-align: center;color:gray;
+    text-align: center;color:var(--tc);
+}
+.main-home{
+    background-color: inherit;
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
 .welcome{
-    text-align: center;
-    font-size: larger;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: right;
+     font-size: calc(30px + 30 * ((100vmin - 320px) / 680));
+    /* max 60px and min 30px*/
+    font-family: 'Ubuntu', sans-serif;
+    border-right: 4px solid blue;
+    width: 50vmin;
+    height:45vmin;
+    padding-top: 30px;
+    padding-right: 20px;
 }
-.wel{
-    margin-top: 10vh;
+.create-home{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vmin;
+    height:45vmin;
+    padding: 20px;
+    margin-top: 50px;
+}
+.text1{
+    color:rgb(7, 147, 182);
+    margin-bottom: 2vmin;
+}
+.text2{
+    color: blueviolet;
+}
+.create-home button{
+    font-size: 3.5vmin;
+    border-radius: 7px;
+    background: linear-gradient(90deg,aqua,rgb(0, 119, 255));
+    outline: none;
+    border: none;
+    width:80%;
+    height:30%;
+    margin-bottom: 20px;
+    transition-duration: 0.5s;
+}
+.create-home button:hover{
+    transform: scale(110%);
+    transition-duration: 0.5s ;
 }
 .create{
-    justify-content: center;
-    margin-left: 44.5vw;
-    margin-top: 8vh;
-    width: 10vw;
-    height: 5vh;
-    border-radius: 1.2vh;
     border: none;
-   background-color: rgb(238, 238, 238);
-   font-size:15px;
-   font-weight: 900;
-   font-family: 'Montserrat', sans-serif;
+    background-color: inherit;   
 }
-.create:hover{
-    background-color: gainsboro;
-    transform: scale(1.02);
+.textedit{
+    display: flex;
+    justify-content: center;
+}
+.create i{
+    color: var(--titles);
+}
+.create i:hover{
+    transform: scale(120%);
     transition-duration: 0.5s;
+}
+.create-div{
+    width:23vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .form{
     margin-top: 7vh;
     flex: none;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
 }
 .submit{
     margin-top: 3vh;
-    height: 5vh;
-    width: 5vw;
-    border-radius: 1vw;
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
     outline: none;
     border: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight:bolder;
+    font-size: 1em;
 }
 .input{
-    height: 8vh;
-    width: 35vw;
+    height: 40px;
+    width: 75%;
+    max-width: 400px;
     overflow:scroll;
     margin-top: 2vh;
-    border-radius: 0.5vw;
-    background-color: rgb(199, 251, 255);
+    border-radius: 5px;
+    background-color: var(--input);
    scrollbar-base-color:rgb(196, 251, 255) ;
     scrollbar-width: thin;
     outline: none;
     padding: 1vw;
     border: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
+    margin-bottom: 30px;
      
 }
+
  .input:focus{
-    background-color:rgb(148, 230, 255);
+    
      border: none;
-     transition-duration: 0.5s; color: rgb(94, 94, 94);
-     font-family: 'Montserrat', sans-serif;
+     border-bottom: 2px solid rgb(170, 96, 0);
+     transition-duration: 0.1s; color: rgb(94, 94, 94);
+     font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
  }
 .input1{
-    height: 15vh;
-    width: 35vw;
+    height: 50vh;
+    width: 90vw;
     overflow:scroll;
     margin-top: 2vh;
     border-radius: 1vw;
@@ -154,32 +265,72 @@ body{
     padding: 1vw;
     background-color: rgb(199, 251, 255);
     scrollbar-base-color:rgb(196, 251, 255) ;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
-.input1:focus{
-    background-color:rgb(148, 230, 255);
-    border: none;
-    transition-duration: 0.5s;
-    color: rgb(94, 94, 94);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
 }
 .input-div{
     text-align: center;
     padding-bottom: 2vh;
     font-size: large;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
+    color:var(--tc);
+}
+.title{
+
+    font-size: 3.5vmin;
+    height:8vmin;
+    margin:8px;
+    padding: 10px;
+    width: 20vw;
+    background:var(--titles);
+    margin-bottom: 0px;
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
 }
 .blog-contents{
-    margin-left: 3vw;
-    margin-top: 3vh;
+    width: 20vw;
+    height: 25vmin;
+    margin:8px;
+    margin-top: 0px;
+    padding: 10px;
+    padding-top: 15px;
     text-decoration: none;
     color: inherit;
-    font-size: 1.5vw;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+    font-size: 3vmin;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+
+    background:  var(--content);
+    border-radius: 0px 0px 5px 5px;
+}
+.blog-contents a{
+    text-decoration: none;
+    color:inherit;
+    cursor: default;
+    pointer-events: none;    
+}
+.content{
+    overflow: hidden;
+    word-wrap: break-word;
+    height:70%;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.blog-container{
+    margin-top: 10vh;
+    height:120vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    padding-bottom: 40px;
+}
+.blogg{
+    transition-duration: 0.5s;
+}
+.blogg:hover{
+    transform: scale(105%);
+    transition-duration: 0.5s;
 }
 .empty-contents{
     margin-left: 3vw;
@@ -188,90 +339,112 @@ body{
     color: inherit;
     font-size: 1.5vw;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
 }
 .detail{
     display: flex;
-    justify-content: space-evenly;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:bold;
-    color: blue;
+    justify-content: space-between;
+    font-family: "Ubuntu",'Segoe UI', 'sans-serif';
+    padding-bottom: 30px;
+    margin-bottom: 10px;
     
 }
+.detail a{
+    text-decoration: none;
+    font-style: italic;
+    border-bottom:2px dotted; 
+    color: black;
+}
 .main{
+    font-size: 3vmin;
     margin-top: 3vh;
-    width: 30vw;
-    background-color: rgb(199, 251, 255);
-    text-align: center;
+    width: 70vw;
+    background-color: white;
     border-radius: 1vw;
-}
-.blo{
-    padding: 3px;
-}
-.main:hover{
+    padding: 30px;
     box-shadow:  2px 1px 2px rgb(197, 197, 197);
 }
+.blo-title{
+    font-weight: 680;
+    padding: 10px;
+    text-align: center;
+    font-size: inherit;
+}
 .del{
+    display: none;
     margin-top: 3vh;
-    border-radius: 2vh;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    height: fit-content;
 }
 .delete{
     border-radius: 2vh;
     padding: 0.5vw;
-    background-color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+    font-family: 'Segoe UI', 'sans-serif';
+
 }
-.delete:hover{
+.del:hover{
     cursor: pointer;
-    box-shadow: 1px 2px gray;
-    transform: scale(2);
+    background-color: red;
+    transform: scale(110%);
     transition-duration: 0.5;
-    color: red;
+    color: white;
+}
+.s{
+    position: fixed;
+    top: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .signup{
-     align-self: center;
-    justify-content: center;
-      width: 25vw;
-      height: auto;
-    margin-top: 22vh;
-    margin-left: 35vw;
-    background-color:white;
+      width:60%;
+      max-width: 270px;
+      height: 50vh;
+    background-color:var(--input);
+    color: var(--tc);
      display: flex;
-     border-radius: 2vw;
+     border-radius: 8px;
      padding: 2px;
-     font-family: 'Montserrat', sans-serif;
+     font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
 }
  .sign{
      padding: 2px;
       outline: none;
-    border-radius: 1vh;
-     border-color: gray;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
      border-width: 1px;
-     width: 15vw;
-     height: 3.5vh;
-     color: rgb(134, 134, 134); 
-     font-size: small; 
-     font-family: 'Montserrat', sans-serif;
+     width: 90%;
+     height: 5vmin; 
+     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
+    margin:10px 10px 20px 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+ }
+ .sign:focus{
+     transition-duration: 0.1s;
+     border-bottom: 3px solid rgb(170, 96, 0);
  }
 .submit2{
-    justify-self: center;
-    margin-left: 5vw;
-    height: 5vh;
-    width: 5vw;
-    border-radius: 1vw;
+    margin-left: auto;
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
     outline: none;
     border: none;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
+    background-color: rgb(101, 101, 255);
 
 }
 .emailerror{

@@ -4,6 +4,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title><%= title%></title>
         <link rel="stylesheet" href="/Styles.css">
     </head>
@@ -11,10 +12,13 @@
         <%- include('../public/partials/navbar') %>
         <div class="detail">
             <div class = "main">
-                <p class = "blo"><%=data.main%></p>
+                <h1><p class="blo-title"><%=data.title%></p></h1>
+                <%-data.main%>
             </div>
             <div class = "del">
-                 <a class = "delete" data-doc="<%= data._id%>">Delete</a>
+                 <a class = "delete" data-doc="<%= data._id%>">
+                     <i class="material-icons" style="font-size: 7vmin;">delete</i>
+                </a>
             </div>
         </div>
         <%- include('../public/partials/footer') %>
@@ -29,5 +33,6 @@
                 .catch((err)=>{console.log(err);})
             })
         </script>
+        <%- include('../public/partials/script') %>
     </body>
 </html>

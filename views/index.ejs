@@ -6,15 +6,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <title><%= title%></title>
         <link rel="stylesheet" href="/Styles.css">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     </head>
     <body>
         <%- include('../public/partials/navbar') %>
-        <div class = "wel">
-            <p class = "welcome">Welcome User</p>
-        </div>
-        <div >
-            <button class="create" onclick="window.location.href='/create';">Create Blog</button>
+        <div class="main-home">
+            <div class = "wel">
+                <p class = "welcome">
+                <span class="text1">Welcome User</span><br>
+                <span class="text2">Start a New Blog</span>
+                </p>
+            </div>
+            <div class="create-home">
+                <button onclick="window.location.href='/create';">Create Blog</button>
+                <button onclick="window.location.href='/blogs';">View Blogs</button>
+            </div>
         </div>
         <%- include('../public/partials/footer') %>
+        <%- include('../public/partials/script') %>
     </body>
 </html>

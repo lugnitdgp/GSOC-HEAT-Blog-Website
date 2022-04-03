@@ -9,18 +9,20 @@
     </head>
     <body>
         <%- include('../public/partials/navbar') %>
+        <div class="s">
         <div class="signup">
             <form autocomplete="off">
-                <h2>Login</h2>
-                <div><label for = "email">Email</label></div>
+                <h2 style="margin-left:10px ;margin-top: 30px;">Login</h2>
+                <div style="margin-left:10px ;"><label for = "email">Email</label></div>
                 <input type="text" name="email" class = "sign" autocomplete="off">
-                <div class="emailerror"></div>
-                <div><label for = "password">Password</label></div>
+                <div class="emailerror" ></div>
+                <div style="margin-left:10px ;"><label for = "password">Password</label></div>
                 <input type="password" name="password" class = "sign" autocomplete="off">
                 <div class="passworderror"></div>
-                <button class = "submit2">Submit</button>
+                <button class = "submit2" style="margin-left:10px ;">Submit</button>
             </form>
         </div>
+    </div>
         <%- include('../public/partials/footer') %>
 
         <script>
@@ -56,5 +58,6 @@
                 
             })
         </script>
+        <%- include('../public/partials/script') %>
     </body>
 </html>

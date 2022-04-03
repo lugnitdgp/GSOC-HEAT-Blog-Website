@@ -1,7 +1,14 @@
 <div class="navbar">
+    <div class="nav1">
     <div class= "top"><a class = "nav" href="/">HOME</a></div>
     <div class= "top"><a class = "nav" href="/about">ABOUT</a></div>
     <div class= "top"><a class = "nav" href="/blogs">BLOGS</a></div>
+    </div>
+    <buttom class="hamburger" id="hamburger" onclick="menubar()">
+        <span class="icon">
+            <i class='fas fa-bars'></i>
+        </span>
+    </buttom>
     <div class = "nav2">
           <% if(user){%>
     <div class= "top1">Welcome <%= user.email %></div>
@@ -12,3 +19,23 @@
     <%}%>
     </div>
 </div>
+<div class="navbar" id="ham-item">
+    <div>
+        <% if(user){%>
+  <div class= "top1" style="width: 100vw;">Welcome <%= user.email %></div>
+  <div class= "top" style="width: 100vw;"><a class = "nav" href="/logout">LOGOUT</a></div>
+  <%}else{%>
+  <div class= "top" style="width: 100vw;"><a class = "nav" href="/signup">SIGN UP</a></div>
+  <div class= "top" style="width: 100vw;"><a class = "nav" href="/login">LOGIN</a></div>
+  <%}%>
+  </div>
+</div>
+<script>
+    const st=document.getElementById('ham-item');
+    function menubar(){
+        if(window.getComputedStyle(st).getPropertyValue('display')=='none')
+            st.style='display:block;';
+        else
+            st.style='display:none;';
+    }
+</script>
