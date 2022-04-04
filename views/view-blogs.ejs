@@ -12,7 +12,11 @@
        <div >
         <%if(data.length>0){ %> 
             <%data.forEach(data=>{%>
-                <div class="blog-contents"><ul><li><a class ="nav" href='/blogs/<%= data._id%>'><%= data.title %></a></li></ul></div>
+                <% if(user.googleId){ %>
+                    <div class="blog-contents"><ul><li><a class ="nav" href='/guser/blogs/<%= data._id%>'><%= data.title %></a></li></ul></div>
+                <% }else{ %>
+                    <div class="blog-contents"><ul><li><a class ="nav" href='/blogs/<%= data._id%>'><%= data.title %></a></li></ul></div>
+                <% } %>
             <%})%> 
         <%}else{%>
             <p class="empty-contents">No Blogs to Display !</p>

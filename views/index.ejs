@@ -13,7 +13,12 @@
             <p class = "welcome">Welcome User</p>
         </div>
         <div >
-            <button class="create" onclick="window.location.href='/create';">Create Blog</button>
+            <% if(user.googleId){ %>
+                <button class="create" onclick="window.location.href='guser/create';">Create Blog</button>
+            <% }else{ %>
+                <button class="create" onclick="window.location.href='/create';">Create Blog</button>
+            <% } %>
+            
         </div>
         <%- include('../public/partials/footer') %>
     </body>
