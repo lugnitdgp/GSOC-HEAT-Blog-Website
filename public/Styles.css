@@ -1,3 +1,8 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
 body{
     background: rgb(221, 254, 255);
     overflow: auto;
@@ -43,7 +48,7 @@ body{
 .top1:hover{
     color: rgb(0, 47, 255);
 }
- 
+
 .error{
     padding-top: 2vh;
     margin-left: 3vw;
@@ -65,13 +70,11 @@ body{
     font-weight: 900;
 }
 .footer{
-   
     position: absolute;
-    bottom: 0;
-    align-items: center;
+    text-align: center;
 }
 .copyright{
-     
+
     margin-left:45vw;
     text-align: center;color:gray;
 }
@@ -102,76 +105,11 @@ body{
     transform: scale(1.02);
     transition-duration: 0.5s;
 }
-.form{
-    margin-top: 7vh;
-    flex: none;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
+
+.del{
+  margin-top: 50px;
 }
-.submit{
-    margin-top: 3vh;
-    height: 5vh;
-    width: 5vw;
-    border-radius: 1vw;
-    outline: none;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight:bolder;
-}
-.input{
-    height: 8vh;
-    width: 35vw;
-    overflow:scroll;
-    margin-top: 2vh;
-    border-radius: 0.5vw;
-    background-color: rgb(199, 251, 255);
-   scrollbar-base-color:rgb(196, 251, 255) ;
-    scrollbar-width: thin;
-    outline: none;
-    padding: 1vw;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-     
-}
- .input:focus{
-    background-color:rgb(148, 230, 255);
-     border: none;
-     transition-duration: 0.5s; color: rgb(94, 94, 94);
-     font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
- }
-.input1{
-    height: 15vh;
-    width: 35vw;
-    overflow:scroll;
-    margin-top: 2vh;
-    border-radius: 1vw;
-    border: none;
-    scrollbar-width: thin;
-    outline: none;
-    padding: 1vw;
-    background-color: rgb(199, 251, 255);
-    scrollbar-base-color:rgb(196, 251, 255) ;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
-.input1:focus{
-    background-color:rgb(148, 230, 255);
-    border: none;
-    transition-duration: 0.5s;
-    color: rgb(94, 94, 94);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
-.input-div{
-    text-align: center;
-    padding-bottom: 2vh;
-    font-size: large;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
+
 .blog-contents{
     margin-left: 3vw;
     margin-top: 3vh;
@@ -197,7 +135,12 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight:bold;
     color: blue;
-    
+
+}
+.delete{
+  font-family: 'Montserrat', sans-serif;
+  font-weight:bold;
+
 }
 .main{
     margin-top: 3vh;
@@ -211,26 +154,6 @@ body{
 }
 .main:hover{
     box-shadow:  2px 1px 2px rgb(197, 197, 197);
-}
-.del{
-    margin-top: 3vh;
-    border-radius: 2vh;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
-.delete{
-    border-radius: 2vh;
-    padding: 0.5vw;
-    background-color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-}
-.delete:hover{
-    cursor: pointer;
-    box-shadow: 1px 2px gray;
-    transform: scale(2);
-    transition-duration: 0.5;
-    color: red;
 }
 .signup{
      align-self: center;
@@ -254,8 +177,8 @@ body{
      border-width: 1px;
      width: 15vw;
      height: 3.5vh;
-     color: rgb(134, 134, 134); 
-     font-size: small; 
+     color: rgb(134, 134, 134);
+     font-size: small;
      font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
