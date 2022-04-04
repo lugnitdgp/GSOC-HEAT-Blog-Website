@@ -4,21 +4,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title><%= title%></title>
         <link rel="stylesheet" href="/Styles.css">
+      </head>
     </head>
     <body>
         <%- include('../public/partials/navbar') %>
+
         <div class="detail">
             <div class = "main">
                 <p class = "blo"><%=data.main%></p>
             </div>
             <div class = "del">
-                 <a class = "delete" data-doc="<%= data._id%>">Delete</a>
+                 <a class = "delete btn btn-info" data-doc="<%= data._id%>">Delete</a>
             </div>
         </div>
+
         <%- include('../public/partials/footer') %>
-        <script>
+
+         <script>
             const trashcan = document.querySelector('a.delete');
             trashcan.addEventListener('click',(e)=>{
                 const endpoint=`/blogs/${trashcan.dataset.doc}`;

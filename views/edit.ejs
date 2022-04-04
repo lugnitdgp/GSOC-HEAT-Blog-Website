@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Edit Blog</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Edit Blog</h1>
+      <div class="container">
+        <form class = "form" action="/blogs?_method=PUT" method = "POST">
+          <div class="form-group mt-4 mb-4">
+             <label><h4>Blog title</h4></label>
+             <input class = "form-control " value="<%=data.title%>"  type="text" id = "title" name="title" required></input>
+          </div>
+          <div class="form-group">
+             <label><h4>Blog Description</h4></label>
+             <textarea class = "form-control" type="text" id = "main"  name="main" rows="4" cols="40" required><%=data.main%></textarea>
+          </div>
+          <div class="">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+       </form>
+      </div>
+  </div>
+</body>
+</html>

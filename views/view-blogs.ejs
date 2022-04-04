@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-        <title><%= title%></title>
-        <link rel="stylesheet" href="/Styles.css">
-    </head>
-    <body>
-        <%- include('../public/partials/navbar') %>
-       <div >
-        <%if(data.length>0){ %> 
-            <%data.forEach(data=>{%>
-                <div class="blog-contents"><ul><li><a class ="nav" href='/blogs/<%= data._id%>'><%= data.title %></a></li></ul></div>
-            <%})%> 
-        <%}else{%>
-            <p class="empty-contents">No Blogs to Display !</p>
-       <% }%>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  <title><%= title%></title>
+  <link rel="stylesheet" href="/Styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <%- include('../public/partials/navbar') %>
+  <div class="container">
+    <div class="mt-4 mb-4">
+       <a href="/create" class="btn btn-success">Add Blog</a>
+    </div>
+
+   <% data.forEach(data => { %>
+     <div class="card mt-4">
+       <div class="card-body">
+         <h4 class="card-title"><%= data.title %></h4>
+         <div class="card-subtitle text-muted mb-2">
+           <%= data.createdAt.toLocaleDateString() %>
+         </div>
+         <div class="card-text mb-2"><%= data.main.substring(0,285) %></div>
+         <a href="/blogs/<%= data._id%>" class="btn btn-primary">Read More</a>
+         <a href="/edit/<%= data._id%>" class="btn btn-info">Edit</a>
        </div>
-        <%- include('../public/partials/footer') %>
-    </body>
+     </div>
+   <% }) %>
+ </div>
+
+
+  <%- include('../public/partials/footer') %>
+
+</body>
 </html>

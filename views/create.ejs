@@ -5,21 +5,25 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
         <title><%= title%></title>
+
         <link rel="stylesheet" href="/Styles.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     </head>
     <body>
         <%- include('../public/partials/navbar') %>
+        <div class="container">
           <form class = "form" action="/blogs" method = "POST">
-            <label class="input-div">Blog title</label>
-              <div >
-                <textarea class = "input"type="text" id = "title" name="title" required></textarea>
-              </div>
-              <label class="input-div">Blog Description</label>
-              <div >
-                <textarea class = "input1"type="text" id = "main" name="main" required></textarea>
-              </div>
-              <button class = "submit">Submit</button>
+            <div class="form-group mt-4 mb-4">
+               <label><h4>Blog title</h4></label>
+               <input class = "form-control " type="text" id = "title" name="title" required></input>
+            </div>
+            <div class="form-group">
+               <label><h4>Blog Description</h4></label>
+               <textarea class = "form-control" type="text" id = "main" name="main" rows="4" cols="40" required></textarea>
+            </div>
+              <button class = "btn btn-primary">Submit</button>
          </form>
+        </div>
         <%- include('../public/partials/footer') %>
     </body>
 </html>
