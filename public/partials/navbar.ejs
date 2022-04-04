@@ -1,14 +1,28 @@
 <div class="navbar">
-    <div class= "top"><a class = "nav" href="/">HOME</a></div>
-    <div class= "top"><a class = "nav" href="/about">ABOUT</a></div>
-    <div class= "top"><a class = "nav" href="/blogs">BLOGS</a></div>
-    <div class = "nav2">
-          <% if(user){%>
-    <div class= "top1">Welcome <%= user.email %></div>
-    <div class= "top"><a class = "nav" href="/logout">LOGOUT</a></div>
+    
+  <% if(user){%>
+    <% if(!user.googleId){ %>
+        <div class="top"><a class="nav" href="/">HOME</a></div>
+        <div class="top"><a class="nav" href="/about">ABOUT</a></div>
+        <div class="top"><a class="nav" href="/blogs">BLOGS</a></div>
+    <% }else { %>
+        <div class="top"><a class="nav" href="/guser">HOME</a></div>
+        <div class="top"><a class="nav" href="/guser/about">ABOUT</a></div>
+        <div class="top"><a class="nav" href="guser/blogs">BLOGS</a></div>
+        <% } %>
+        <div class="nav2">
+        <div class="top1">Welcome <%= user.email %></div>
+        <div class="top"><a class="nav" href="/logout">LOGOUT</a></div>
     <%}else{%>
-    <div class= "top"><a class = "nav" href="/signup">SIGN UP</a></div>
-    <div class= "top"><a class = "nav" href="/login">LOGIN</a></div>
-    <%}%>
+
+        <div class="top"><a class="nav" href="/">HOME</a></div>
+        <div class="top"><a class="nav" href="/about">ABOUT</a></div>
+        <div class="top"><a class="nav" href="/blogs">BLOGS</a></div>
+        <div class="nav2">
+        <div class="top"><a class="nav" href="/signup">SIGN UP</a></div>
+        <div class="top"><a class="nav" href="/login">LOGIN</a></div>
+        <div class="goo"><a href="/google">login with google</a></div>
+      <%}%>
     </div>
+  </div>
 </div>

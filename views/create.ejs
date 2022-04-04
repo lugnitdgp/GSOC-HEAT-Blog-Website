@@ -9,7 +9,12 @@
     </head>
     <body>
         <%- include('../public/partials/navbar') %>
+        <% if(user.googleId){ %>
+          <form class = "form" action="/guser/blogs" method = "POST">
+        <% }else{ %>
           <form class = "form" action="/blogs" method = "POST">
+        <% } %>
+          
             <label class="input-div">Blog title</label>
               <div >
                 <textarea class = "input"type="text" id = "title" name="title" required></textarea>

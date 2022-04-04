@@ -14,14 +14,23 @@
                 <p class = "blo"><%=data.main%></p>
             </div>
             <div class = "del">
-                 <a class = "delete" data-doc="<%= data._id%>">Delete</a>
+                <% if(user.googleId){ %>
+                    <a class = "delete" data-doc="<%= data._id%> " google="true">Delete</a>
+                <% }else{ %>
+                    <a class = "delete" data-doc="<%= data._id%> " google="false">Delete</a>
+                <% } %>
             </div>
         </div>
         <%- include('../public/partials/footer') %>
         <script>
             const trashcan = document.querySelector('a.delete');
             trashcan.addEventListener('click',(e)=>{
-                const endpoint=`/blogs/${trashcan.dataset.doc}`;
+                let g = trashcan.getAttribute("google");
+                if(g == "true"){
+                    const endpoint=`/guser/blogs/${trashcan.dataset.doc}`;
+                }else{
+                    const endpoint = `/blogs/${trashcan.dataset.doc}`;
+                }
                 fetch(endpoint,{
                     method:'DELETE'
                 }).then((response)=>response.json())
